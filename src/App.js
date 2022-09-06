@@ -10,12 +10,7 @@ import './App.css';
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDTzBRe2gTFLXNLymTRVGuDFqOQmK1rIxk",
-  authDomain: "hashira-chat.firebaseapp.com",
-  projectId: "hashira-chat",
-  storageBucket: "hashira-chat.appspot.com",
-  messagingSenderId: "609012937466",
-  appId: "1:609012937466:web:08928071b03004547b0f43"
+  //your firebase config
 };
 
 firebase.initializeApp(
