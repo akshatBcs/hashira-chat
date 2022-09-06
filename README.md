@@ -1,5 +1,5 @@
 # Deployed app
-(https://hashira-chat.web.app/)
+https://hashira-chat.web.app/
 
 # Getting Started with Create React App
 
