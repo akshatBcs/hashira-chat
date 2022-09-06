@@ -4,13 +4,9 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 
-
-// import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
 import './App.css';
-// import DateTime from 'datetime';
-// import { getAuth, signInAnonymously } from "firebase/auth";
 
 
 const firebaseConfig = {
@@ -39,16 +35,12 @@ function App() {
   function SignIn() {
     let name = '';
     const signIn = (e) => {
-      // const provider = new firebase.auth.GoogleAuthProvider();
-      // auth.signInWithPopup(provider);
-
       setUser(name);
       setDp(`https://ui-avatars.com/api/?name=${name}`);
 
     }
     const handleChange = (e) => {
       name = e.target.value;
-      // console.log(name);
     }
     const handleSubmit = (e) => {
       e.preventDefault();
@@ -83,7 +75,6 @@ function App() {
 
       <section>
         {user ? <ChatRoom /> : <SignIn />}
-        {/* <ChatRoom /> */}
       </section>
 
     </div>
@@ -105,7 +96,6 @@ function App() {
       const uid = user;
       const photoURL = dp;
       const timeStamp = firebase.firestore.FieldValue.serverTimestamp();
-      // console.log(dp);
 
       await messagesRef.add({
         text: formValue,
@@ -141,24 +131,14 @@ function App() {
 
 
   function ChatMessage(props) {
-    // const { text, uid} = props.message;
     const { text, uid, photoURL } = props.message;
 
     const messageClass = uid === user ? 'sent' : 'received';
-    // console.log(createdAt.seconds===null?Date.now():createdAt.seconds);
-    // console.log(createdAt);
-    // const time = Date.now();
-
-
-    // var dt = new Date(time);
-    // var d24 = new Date('dd/MM/yyyy, HH:mm').format(dt); 
-    // const showTime = dt.getHours()+':'+dt.getMinutes()
 
     return (<>
       <div className={`message ${messageClass}`}>
 
         <img
-          // src={`https://ui-avatars.com/api/?name=${uid}`}
           src={photoURL}
           alt={uid} />
         <p>
